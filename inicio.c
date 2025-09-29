@@ -14,6 +14,7 @@ typedef struct{
 
 void cadastra_usuario(Usuario *x);
 void cadastra_livro(Livro *x);
+void pega_emprestado(Livro *x, Livro *vet[]);
 
 int main(){
     int escolha;
@@ -21,14 +22,22 @@ int main(){
     Usuario cadastrados [1000];
     Usuario usuario;
     Livro livro;
-    printf("digite 1 para cadastrar usuario ou 2 para cadastrar livro:\n");
+    printf("escolha o que deseja:\n");
+    printf("1 - cadastra usuario\n");
+    printf("2 - cadastra livro\n");
+    printf("3 - emprestimo\n");
+    printf("4 - devolucao\n");
     scanf("%d", &escolha);
     getchar();
-    if(escolha == 1){
-        cadastra_usuario(&usuario);
+    if(escolha == 1) cadastra_usuario(&usuario);
+    else if(escolha == 2) cadastra_livro(&livro);
+    else if(escolha == 3){
+        printf("digite o nome do livro que deseja emprestar:\n");
+        fgets(livro.nome, MAX, stdin);
+        printf("%s\n", livro.nome);
     }
-    else if(escolha == 2){
-        cadastra_livro(&livro);
+    else if(escolha == 4){
+        printf("digite o nome do livro que deseja devolver");
     }
     return 0;
 }
@@ -46,4 +55,12 @@ void cadastra_livro(Livro *x){
     printf("digite a quantidade:\n");
     scanf("%d", &x->qnt);
     getchar();
+}
+void pega_emprestado(Livro *x, Livro *vet[]){
+    int i;
+    for(i = 0; i < 999; i++){
+        if(x->nome == vet[i]->nome){
+            vet[i]->qnt--;
+        }
+    }
 }
