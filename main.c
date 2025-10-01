@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "cadastra_livro.h"
+#include <string.h>
 
 #define MAX 100
 
@@ -8,10 +8,15 @@ typedef struct{
     char cpf[12];
     int emprestimos;
 } Usuario;
+typedef struct{
+    char nome[MAX];
+    char autor[MAX];
+    int qnt;
+}Livro;
 
-void cadastra_usuario(Usuario *x, Usuario cadastrados[]);
-void cadastra_livro(Livro *x, Livro acervo[]);
-void pega_emprestado(Livro *x, Livro acervo[]);
+void cadastra_usuario(Usuario cadastrados[]);
+void cadastra_livro(Livro acervo[]);
+void pega_emprestado(Livro acervo[]);
 
 int main(){
     int escolha;
@@ -28,13 +33,13 @@ int main(){
         scanf("%d", &escolha);
         getchar();
         if(escolha == 1){
-            cadastra_usuario(&usuario, &cadastrados);
+            cadastra_usuario(&cadastrados);
             printf("%s\n", cadastrados[0].nome);
             printf("%s\n", cadastrados[0].cpf);
             printf("%d\n", cadastrados[0].emprestimos);
         }
         else if(escolha == 2){
-            cadastra_livro(&livro, &acervo);
+            cadastra_livro(&acervo);
             printf("%s\n", acervo[0].nome);
             printf("%s\n", acervo[0].autor);
             printf("%d\n", acervo[0].qnt);
@@ -50,36 +55,71 @@ int main(){
     }
     return 0;
 }
-/*
-void cadastra_usuario(Usuario *x, Usuario cadastrados[]){
+void cadastra_usuario(Usuario cadastrados[]){
+    char cpf[MAX];
     int i, pos;
     for(i = 0; i < 1000; i++){
-        if(cadastrados[i].nome == '\0'){
+        if(cadastrados[i].nome[0] == '\0'){
             pos = i;
             break;
         }
     }
     printf("digite o nome do usuario:\n");
-    fgets(x->nome, MAX, stdin);
+    fgets(cadastrados[pos].nome, MAX, stdin);
     printf("digite o CPF:\n");
-    fgets(x->cpf, MAX, stdin);
-}
-void cadastra_livro(Livro *x, Livro acervo[]){
-    int i;
-    printf("digite o nome do livro:\n");
-    fgets(x->nome, MAX, stdin);
-    printf("digite o nome do autor:\n");
-    fgets(x->autor, MAX, stdin);
-    printf("digite a quantidade:\n");
-    scanf("%d", &x->qnt);
-    getchar();
-}
-void pega_emprestado(Livro *x, Livro acervo[]){
-    int i;
-    for(i = 0; i < 999; i++){
-        if(x->nome == acervo[i].nome){
-            acervo[i].qnt--;
+    fgets(cpf, 12, stdin);
+    for(i = 0; i < 1000; i++){
+        if(strcmp(cpf, cadastrados[i].cpf) == 0){
+            printf("CPF ja cadastrado.\n");
+            cadastrados[pos].nome[0] = '\0';
+            return;
         }
     }
+    strcpy(cadastrados[pos].cpf, cpf);
 }
-*/
+void cadastra_livro(Livro acervo[]){
+    //PRECISA VERIFICAR SE O LIVRO JA EXISTE NO ACERVO
+    int i, pos;
+    char nome[MAX];
+    for(i = 0; i < 1000; i++){
+        if(acervo[i].nome[0] == '\0'){
+            pos = i;
+            break;
+        }
+    }
+    printf("digite o nome do livro:\n");
+    fgets(nome, MAX, stdin);
+    printf("digite o nome do autor:\n");
+    fgets(acervo[pos].autor, MAX, stdin);
+    printf("digite a quantidade:\n");
+    scanf("%d", &acervo[pos].qnt);
+    getchar();
+}
+void pega_emprestado(Livro acervo[]){
+    char livro[MAX];
+    int escolha, cont = 0;
+    int i;
+    printf("digite o nome do livro que deseja:\n");
+    fgets(livro, MAX, stdin);
+    for(i = 0; i < 1000; i++){
+        if(strcmp(livro, acervo[i].nome) == 0){
+            cont++;
+            if(acervo[i].qnt > 0){
+                printf("disponível para empréstimo.\n");
+                printf("digite 1 para emprestimo ou 2 para cancelar!\n");
+                scanf("%d", &escolha);
+                if(escolha == 1){
+                    acervo[i].qnt--;
+                    printf("emprestimo realizado!\n");
+                }
+                else if(escolha == 2){
+                    return;
+                }
+            }
+        }
+    }
+    if(cont == 0){
+        printf("livro indisponível.\n");
+    }
+    return;
+}
