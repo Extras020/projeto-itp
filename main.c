@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include "cadastra_livro.h"
+
 #define MAX 100
 
 typedef struct{
@@ -6,11 +8,6 @@ typedef struct{
     char cpf[12];
     int emprestimos;
 } Usuario;
-typedef struct{
-    char nome[MAX];
-    char autor[MAX];
-    int qnt;
-}Livro;
 
 void cadastra_usuario(Usuario *x, Usuario cadastrados[]);
 void cadastra_livro(Livro *x, Livro acervo[]);

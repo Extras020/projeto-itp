@@ -1,3 +1,6 @@
+#include <stdio.h>
+#include "cadastra_livro.h"
+
 void cadastra_livro(Livro *x, Livro acervo[]){
     int i;
     printf("digite o nome do livro:\n");
