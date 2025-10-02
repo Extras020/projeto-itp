@@ -11,6 +11,7 @@ typedef struct{
 typedef struct{
     char nome[MAX];
     char autor[MAX];
+    char isbn[3];
     int qnt;
 }Livro;
 
@@ -34,15 +35,9 @@ int main(){
         getchar();
         if(escolha == 1){
             cadastra_usuario(&cadastrados);
-            printf("%s\n", cadastrados[0].nome);
-            printf("%s\n", cadastrados[0].cpf);
-            printf("%d\n", cadastrados[0].emprestimos);
         }
         else if(escolha == 2){
             cadastra_livro(&acervo);
-            printf("%s\n", acervo[0].nome);
-            printf("%s\n", acervo[0].autor);
-            printf("%d\n", acervo[0].qnt);
         }
         else if(escolha == 3){
             printf("digite o nome do livro que deseja emprestar:\n");
@@ -81,16 +76,27 @@ void cadastra_livro(Livro acervo[]){
     //PRECISA VERIFICAR SE O LIVRO JA EXISTE NO ACERVO
     int i, pos;
     char nome[MAX];
+    char isbn[3];
     for(i = 0; i < 1000; i++){
         if(acervo[i].nome[0] == '\0'){
             pos = i;
             break;
         }
     }
+    printf("digite o ISBN:\n");
+    fgets(isbn, MAX, stdin);
+    for(i = 0; i < 1000; i++){
+        if(strcmp(isbn, acervo[i].isbn) == 0){
+            printf("livro ja cadastrado.\n");
+            acervo[pos].nome[0] = '\0';
+            return;
+        }
+    }
     printf("digite o nome do livro:\n");
     fgets(nome, MAX, stdin);
     printf("digite o nome do autor:\n");
     fgets(acervo[pos].autor, MAX, stdin);
+
     printf("digite a quantidade:\n");
     scanf("%d", &acervo[pos].qnt);
     getchar();
