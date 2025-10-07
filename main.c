@@ -18,6 +18,7 @@ typedef struct{
 void cadastra_usuario(Usuario cadastrados[]);
 void cadastra_livro(Livro acervo[]);
 void pega_emprestado(Livro acervo[]);
+void trata_lixo_string(char string[]);
 
 int main(){
     int escolha;
@@ -40,15 +41,24 @@ int main(){
             cadastra_livro(&acervo);
         }
         else if(escolha == 3){
-            printf("digite o nome do livro que deseja emprestar:\n");
-            fgets(livro.nome, MAX, stdin);
-            printf("%s\n", livro.nome);
+            pega_emprestado(&acervo);
         }
         else if(escolha == 4){
             printf("digite o nome do livro que deseja devolver");
         }
     }
     return 0;
+}
+void trata_lixo_string(char string[]){
+    int i, a;
+    for(i = 0; i < MAX; i++){
+        if(string[i] == '\0'){
+            for(a = i+1; a < MAX; a++){
+                string[a] = '\0';
+            }
+        }
+        return;
+    }
 }
 void cadastra_usuario(Usuario cadastrados[]){
     char cpf[MAX];
@@ -76,7 +86,7 @@ void cadastra_livro(Livro acervo[]){
     //PRECISA VERIFICAR SE O LIVRO JA EXISTE NO ACERVO
     int i, pos;
     char nome[MAX];
-    char isbn[3];
+    char isbn[14];
     for(i = 0; i < 1000; i++){
         if(acervo[i].nome[0] == '\0'){
             pos = i;
@@ -84,7 +94,7 @@ void cadastra_livro(Livro acervo[]){
         }
     }
     printf("digite o ISBN:\n");
-    fgets(isbn, MAX, stdin);
+    fgets(isbn, 14, stdin);
     for(i = 0; i < 1000; i++){
         if(strcmp(isbn, acervo[i].isbn) == 0){
             printf("livro ja cadastrado.\n");
@@ -94,6 +104,7 @@ void cadastra_livro(Livro acervo[]){
     }
     printf("digite o nome do livro:\n");
     fgets(nome, MAX, stdin);
+    trata_lixo_string(acervo[pos])
     printf("digite o nome do autor:\n");
     fgets(acervo[pos].autor, MAX, stdin);
 
@@ -107,8 +118,9 @@ void pega_emprestado(Livro acervo[]){
     int i;
     printf("digite o nome do livro que deseja:\n");
     fgets(livro, MAX, stdin);
+    trata_lixo_string(livro);
     for(i = 0; i < 1000; i++){
-        if(strcmp(livro, acervo[i].nome) == 0){
+        if(strcmp(acervo[i].nome, livro) == 0){
             cont++;
             if(acervo[i].qnt > 0){
                 printf("disponível para empréstimo.\n");
