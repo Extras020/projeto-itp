@@ -18,7 +18,7 @@ typedef struct{
 void cadastra_usuario(Usuario cadastrados[]);
 void cadastra_livro(Livro acervo[]);
 void pega_emprestado(Livro acervo[]);
-void trata_lixo_string(char string[]);
+void remove_nova_linha(char string[]);
 
 int main(){
     int escolha;
@@ -49,15 +49,14 @@ int main(){
     }
     return 0;
 }
-void trata_lixo_string(char string[]){
-    int i, a;
-    for(i = 0; i < MAX; i++){
-        if(string[i] == '\0'){
-            for(a = i+1; a < MAX; a++){
-                string[a] = '\0';
-            }
+void remove_nova_linha(char string[]){
+    int i = 0;
+    while(string[i] != '\0'){
+        if(string[i] == '\n'){
+            string[i] = '\0';
+            return;
         }
-        return;
+        i++;
     }
 }
 void cadastra_usuario(Usuario cadastrados[]){
@@ -71,8 +70,10 @@ void cadastra_usuario(Usuario cadastrados[]){
     }
     printf("digite o nome do usuario:\n");
     fgets(cadastrados[pos].nome, MAX, stdin);
+    remove_nova_linha(cadastrados[pos].nome);
     printf("digite o CPF:\n");
     fgets(cpf, 12, stdin);
+    remove_nova_linha(cpf);
     for(i = 0; i < 1000; i++){
         if(strcmp(cpf, cadastrados[i].cpf) == 0){
             printf("CPF ja cadastrado.\n");
@@ -95,19 +96,21 @@ void cadastra_livro(Livro acervo[]){
     }
     printf("digite o ISBN:\n");
     fgets(isbn, 14, stdin);
+    remove_nova_linha(isbn);
     for(i = 0; i < 1000; i++){
-        if(strcmp(isbn, acervo[i].isbn) == 0){
+        if(strcmp(acervo[i].isbn, isbn) == 0){
             printf("livro ja cadastrado.\n");
             acervo[pos].nome[0] = '\0';
             return;
         }
     }
+    strcpy(acervo[pos].isbn, isbn);
     printf("digite o nome do livro:\n");
-    fgets(nome, MAX, stdin);
-    trata_lixo_string(acervo[pos])
+    fgets(acervo[pos].nome, MAX, stdin);
+    remove_nova_linha(acervo[pos].nome);
     printf("digite o nome do autor:\n");
     fgets(acervo[pos].autor, MAX, stdin);
-
+    remove_nova_linha(acervo[pos].autor);
     printf("digite a quantidade:\n");
     scanf("%d", &acervo[pos].qnt);
     getchar();
@@ -118,7 +121,6 @@ void pega_emprestado(Livro acervo[]){
     int i;
     printf("digite o nome do livro que deseja:\n");
     fgets(livro, MAX, stdin);
-    trata_lixo_string(livro);
     for(i = 0; i < 1000; i++){
         if(strcmp(acervo[i].nome, livro) == 0){
             cont++;
