@@ -35,13 +35,13 @@ int main(){
         scanf("%d", &escolha);
         getchar();
         if(escolha == 1){
-            cadastra_usuario(&cadastrados);
+            cadastra_usuario(cadastrados);
         }
         else if(escolha == 2){
-            cadastra_livro(&acervo);
+            cadastra_livro(acervo);
         }
         else if(escolha == 3){
-            pega_emprestado(&acervo);
+            pega_emprestado(acervo);
         }
         else if(escolha == 4){
             printf("digite o nome do livro que deseja devolver");
@@ -84,7 +84,6 @@ void cadastra_usuario(Usuario cadastrados[]){
     strcpy(cadastrados[pos].cpf, cpf);
 }
 void cadastra_livro(Livro acervo[]){
-    //PRECISA VERIFICAR SE O LIVRO JA EXISTE NO ACERVO
     int i, pos;
     char nome[MAX];
     char isbn[14];
@@ -94,17 +93,6 @@ void cadastra_livro(Livro acervo[]){
             break;
         }
     }
-    printf("digite o ISBN:\n");
-    fgets(isbn, 14, stdin);
-    remove_nova_linha(isbn);
-    for(i = 0; i < 1000; i++){
-        if(strcmp(acervo[i].isbn, isbn) == 0){
-            printf("livro ja cadastrado.\n");
-            acervo[pos].nome[0] = '\0';
-            return;
-        }
-    }
-    strcpy(acervo[pos].isbn, isbn);
     printf("digite o nome do livro:\n");
     fgets(acervo[pos].nome, MAX, stdin);
     remove_nova_linha(acervo[pos].nome);
@@ -114,6 +102,18 @@ void cadastra_livro(Livro acervo[]){
     printf("digite a quantidade:\n");
     scanf("%d", &acervo[pos].qnt);
     getchar();
+    printf("digite o ISBN:\n");
+    fgets(isbn, 14, stdin);
+    remove_nova_linha(isbn);
+    for(i = 0; i < 1000; i++){
+        if(strcmp(acervo[i].isbn, isbn) == 0){
+            printf("livro ja cadastrado.\n");
+            acervo[pos].nome[0] = '\0';
+            acervo[pos].autor[0] = '\0';
+            return;
+        }
+    }
+    strcpy(acervo[pos].isbn, isbn);
 }
 void pega_emprestado(Livro acervo[]){
     char livro[MAX];
