@@ -24,8 +24,6 @@ int main(){
     int escolha;
     Livro acervo[1000] = {0};
     Usuario cadastrados [1000] = {0};
-    Usuario usuario;
-    Livro livro;
     while(1){
         printf("escolha o que deseja:\n");
         printf("1 - cadastra usuario\n");
@@ -85,7 +83,6 @@ void cadastra_usuario(Usuario cadastrados[]){
 }
 void cadastra_livro(Livro acervo[]){
     int i, pos;
-    char nome[MAX];
     char isbn[14];
     for(i = 0; i < 1000; i++){
         if(acervo[i].nome[0] == '\0'){
@@ -128,17 +125,17 @@ void pega_emprestado(Livro acervo[], Usuario cadastrados[]){
             cont++;
             pos_livro = i;
             if(acervo[i].qnt > 0){
-                printf("disponÌvel para emprÈstimo.\n");
+                printf("dispon√≠vel para empr√©stimo.\n");
                 break;
             }
             else{
-                printf("indisponÌvel para emprÈstimo.\n");
+                printf("indispon√≠vel para empr√©stimo.\n");
                 return;
             }
         }
     }
     if(cont == 0) {
-        printf("livro n„o existe no acervo!\n");
+        printf("livro n√£o existe no acervo!\n");
         return;
     }
     cont = 0;
@@ -146,24 +143,24 @@ void pega_emprestado(Livro acervo[], Usuario cadastrados[]){
     scanf("%d", &escolha);
     getchar();
     if(escolha == 2){
-        printf("emprÈstimo cancelado!\n");
+        printf("empr√©stimo cancelado!\n");
         return;
     }
     else if(escolha == 1){
-        printf("informe o cpf do usu·rio que deseja pegar emprestado:\n");
+        printf("informe o cpf do usu√°rio que deseja pegar emprestado:\n");
         fgets(cpf, MAX, stdin);
         remove_nova_linha(cpf);
         for(i = 0; i < 1000; i++){
             if(strcmp(cadastrados[i].cpf, cpf) == 0){
                 cont++;
                 printf("%s\n", cadastrados[i].nome);
-                printf("confirme o usu·rio!(0 para sim, 1 para n„o)\n");
+                printf("confirme o usu√°rio!(0 para sim, 1 para n√£o)\n");
                 scanf("%d", &verifica_id);
                 getchar();
                 if(verifica_id == 0){
                     cadastrados[i].emprestimos++;
                     acervo[pos_livro].qnt--;
-                    printf("emprÈstimo realizado!\n");
+                    printf("empr√©stimo realizado!\n");
                     return;
                 }
                 else if(verifica_id == 1){
@@ -173,7 +170,7 @@ void pega_emprestado(Livro acervo[], Usuario cadastrados[]){
             }
         }
         if(cont == 0){
-            printf("usu·rio n„o encontrado!\n");
+            printf("usu√°rio n√£o encontrado!\n");
             return;
         }
     }
