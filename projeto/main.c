@@ -29,7 +29,6 @@ int main(){
         printf("1 - cadastra usuario\n");
         printf("2 - cadastra livro\n");
         printf("3 - emprestimo\n");
-        printf("4 - devolucao\n");
         scanf("%d", &escolha);
         getchar();
         if(escolha == 1){
@@ -40,9 +39,6 @@ int main(){
         }
         else if(escolha == 3){
             pega_emprestado(acervo, cadastrados);
-        }
-        else if(escolha == 4){
-            printf("digite o nome do livro que deseja devolver");
         }
     }
     return 0;
