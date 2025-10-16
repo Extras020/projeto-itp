@@ -11,7 +11,7 @@ typedef struct{
 typedef struct{
     char nome[MAX];
     char autor[MAX];
-    char isbn[3];
+    char isbn[14];
     int qnt;
 }Livro;
 
