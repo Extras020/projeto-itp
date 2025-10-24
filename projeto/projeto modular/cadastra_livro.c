@@ -22,7 +22,7 @@ void cadastra_livro(Livro acervo[]){
     scanf("%d", &acervo[pos].qnt);
     getchar();
     printf("digite o ISBN:\n");
-    fgets(isbn, 14, stdin);
+    fgets(isbn, MAX, stdin);
     remove_nova_linha(isbn);
     for(i = 0; i < 1000; i++){
         if(strcmp(acervo[i].isbn, isbn) == 0){

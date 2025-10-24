@@ -12,12 +12,12 @@ typedef struct{
 typedef struct{
     char nome[MAX];
     char autor[MAX];
-    char isbn[14];
+    char isbn[MAX];
     int qnt;
 }Livro;
 
 typedef struct{
-    char isbn[14];
+    char isbn[MAX];
     char cpf[MAX];
 }Emprestimos;
 

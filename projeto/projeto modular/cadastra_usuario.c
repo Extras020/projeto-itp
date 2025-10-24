@@ -16,7 +16,7 @@ void cadastra_usuario(Usuario cadastrados[]){
     fgets(cadastrados[pos].nome, MAX, stdin);
     remove_nova_linha(cadastrados[pos].nome);
     printf("digite o CPF:\n");
-    fgets(cpf, 12, stdin);
+    fgets(cpf, MAX, stdin);
     remove_nova_linha(cpf);
     for(i = 0; i < 1000; i++){
         if(strcmp(cpf, cadastrados[i].cpf) == 0){

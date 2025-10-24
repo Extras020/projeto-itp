@@ -5,12 +5,8 @@
 #include "cadastra_livro.h"
 #include "pega_emprestado.h"
 
-void cadastra_usuario(Usuario cadastrados[]);
-void cadastra_livro(Livro acervo[]);
-void pega_emprestado(Livro acervo[], Usuario cadastrados[], Emprestimos pegos[]);
 void insere_emprestados(Emprestimos pegos[], char livro[], char cpf[], Livro acervo[]);
 void devolucao(Livro acervo[], Usuario cadastrados[]);
-void remove_nova_linha(char string[]);
 
 int main(){
     int escolha;
@@ -22,6 +18,7 @@ int main(){
         printf("1 - cadastra usuario\n");
         printf("2 - cadastra livro\n");
         printf("3 - emprestimo\n");
+        printf("4 - devolucao\n");
         scanf("%d", &escolha);
         getchar();
         if(escolha == 1){
@@ -32,6 +29,9 @@ int main(){
         }
         else if(escolha == 3){
             pega_emprestado(acervo, cadastrados, pegos);
+        }
+        else if(escolha == 4){
+            devolucao(acervo, cadastrados);
         }
     }
     return 0;
@@ -55,15 +55,18 @@ void insere_emprestados(Emprestimos pegos[], char livro[], char cpf[], Livro ace
 void devolucao(Livro acervo[], Usuario cadastrados[]){
     char cpf[MAX];
     char livro[MAX];
-    int i, cont = 0, confirma_id;
+    int i, cont = 0, confirma_id, pos_id;
+    printf("digite o cpf do usuario:\n");
     fgets(cpf, MAX, stdin);
     remove_nova_linha(cpf);
     for(i = 0; i < 1000; i++){
         if(strcmp(cadastrados[i].cpf, cpf) == 0){
             cont++;
+            pos_id = i;
             printf("confirme o nome(digite 0 para sim ou 1 para não).\n");
             printf("%s\n", cadastrados[i].nome);
             scanf("%d", &confirma_id);
+            getchar();
             if(confirma_id == 0){
                 break;
             }
@@ -87,7 +90,7 @@ void devolucao(Livro acervo[], Usuario cadastrados[]){
                 cont++;
                 printf("devolução realizada!\n");
                 acervo[i].qnt++;
-                cadastrados[i].emprestimos--;
+                cadastrados[pos_id].emprestimos--;
             }
         }
         if(cont == 0){
