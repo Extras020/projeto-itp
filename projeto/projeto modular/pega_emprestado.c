@@ -2,6 +2,7 @@
 #include <string.h>
 #include "tipos.h"
 #include "remove_nova_linha.h"
+#include "insere_emprestados.h"
 
 void pega_emprestado(Livro acervo[], Usuario cadastrados[], Emprestimos pegos[]){
     char livro[MAX];
@@ -51,6 +52,7 @@ void pega_emprestado(Livro acervo[], Usuario cadastrados[], Emprestimos pegos[])
                 if(verifica_id == 0){
                     cadastrados[i].emprestimos++;
                     acervo[pos_livro].qnt--;
+                    insere_emprestados(pegos, livro, cpf, acervo);
                     printf("empréstimo realizado!\n");
                     return;
                 }

@@ -39,6 +39,14 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="cadastra_usuario.h" />
+		<Unit filename="devolucao.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="devolucao.h" />
+		<Unit filename="insere_emprestados.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="insere_emprestados.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>

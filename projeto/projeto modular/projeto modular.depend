@@ -1,44 +1,63 @@
 # depslib dependency file v1.0
-1761333650 source:c:\users\labinfo4\desktop\projeto-itp\projeto\projeto modular\main.c
+1761337981 source:c:\users\labinfo4\desktop\projeto-itp\projeto\projeto modular\main.c
 	<stdio.h>
 	<string.h>
 	"tipos.h"
 	"cadastra_usuario.h"
 	"cadastra_livro.h"
 	"pega_emprestado.h"
+	"devolucao.h"
 
-1761331662 c:\users\labinfo4\desktop\projeto-itp\projeto\projeto modular\tipos.h
+1761334258 c:\users\labinfo4\desktop\projeto-itp\projeto\projeto modular\tipos.h
 
-1761331683 source:c:\users\labinfo4\desktop\projeto-itp\projeto\projeto modular\cadastra_usuario.c
+1761334258 source:c:\users\labinfo4\desktop\projeto-itp\projeto\projeto modular\cadastra_usuario.c
 	<stdio.h>
 	<string.h>
 	"remove_nova_linha.h"
 	"tipos.h"
 
-1761331148 c:\users\labinfo4\desktop\projeto-itp\projeto\projeto modular\remove_nova_linha.h
+1761334258 c:\users\labinfo4\desktop\projeto-itp\projeto\projeto modular\remove_nova_linha.h
 
-1761331148 source:c:\users\labinfo4\desktop\projeto-itp\projeto\projeto modular\remove_nova_linha.c
+1761334258 source:c:\users\labinfo4\desktop\projeto-itp\projeto\projeto modular\remove_nova_linha.c
 	<stdio.h>
 	<string.h>
 
-1761331148 c:\users\labinfo4\desktop\projeto-itp\projeto\projeto modular\cadastra_usuario.h
+1761334258 c:\users\labinfo4\desktop\projeto-itp\projeto\projeto modular\cadastra_usuario.h
 	"tipos.h"
 
-1761331718 source:c:\users\labinfo4\desktop\projeto-itp\projeto\projeto modular\cadastra_livro.c
-	<stdio.h>
-	<string.h>
-	"tipos.h"
-	"remove_nova_linha.h"
-
-1761331148 c:\users\labinfo4\desktop\projeto-itp\projeto\projeto modular\cadastra_livro.h
-	"tipos.h"
-
-1761331148 source:c:\users\labinfo4\desktop\projeto-itp\projeto\projeto modular\pega_emprestado.c
+1761334258 source:c:\users\labinfo4\desktop\projeto-itp\projeto\projeto modular\cadastra_livro.c
 	<stdio.h>
 	<string.h>
 	"tipos.h"
 	"remove_nova_linha.h"
 
-1761331148 c:\users\labinfo4\desktop\projeto-itp\projeto\projeto modular\pega_emprestado.h
+1761334258 c:\users\labinfo4\desktop\projeto-itp\projeto\projeto modular\cadastra_livro.h
 	"tipos.h"
+
+1761335197 source:c:\users\labinfo4\desktop\projeto-itp\projeto\projeto modular\pega_emprestado.c
+	<stdio.h>
+	<string.h>
+	"tipos.h"
+	"remove_nova_linha.h"
+	"insere_emprestados.h"
+
+1761334258 c:\users\labinfo4\desktop\projeto-itp\projeto\projeto modular\pega_emprestado.h
+	"tipos.h"
+
+1761334826 source:c:\users\labinfo4\desktop\projeto-itp\projeto\projeto modular\insere_emprestados.c
+	<stdio.h>
+	<string.h>
+	"tipos.h"
+
+1761334938 c:\users\labinfo4\desktop\projeto-itp\projeto\projeto modular\insere_emprestados.h
+	"tipos.h"
+
+1761337049 source:c:\users\labinfo4\desktop\projeto-itp\projeto\projeto modular\devolucao.c
+	<stdio.h>
+	<string.h>
+	"tipos.h"
+	"remove_nova_linha.h"
+
+1761336930 c:\users\labinfo4\desktop\projeto-itp\projeto\projeto modular\devolucao.h
+	"string.h"
 
