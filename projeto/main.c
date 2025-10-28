@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 
 #define MAX 100
 
@@ -27,7 +28,8 @@ void devolucao(Livro acervo[], Usuario cadastrados[]);
 void remove_nova_linha(char string[]);
 
 int main(){
-    int escolha;
+    int escolha = 0, i, validacao;
+    char entrada[100];
     Livro acervo[1000] = {0};
     Usuario cadastrados [1000] = {0};
     Emprestimos pegos[1000] = {0};
@@ -36,8 +38,33 @@ int main(){
         printf("1 - cadastra usuario\n");
         printf("2 - cadastra livro\n");
         printf("3 - emprestimo\n");
-        scanf("%d", &escolha);
-        getchar();
+        while(1){
+            fgets(entrada, 100, stdin);
+            remove_nova_linha(entrada);
+            if(strlen(entrada) == 0){
+                printf("nenhuma entrada detectada, tente novamente!\n");
+                continue;
+            }
+            validacao = 1;
+            i = 0;
+            while(entrada[i] != '\0'){
+                if(entrada[i] < '0' || entrada[i] > '9'){
+                    validacao = 0;
+                    break;
+                }
+                i++;
+            }
+            if(validacao == 0){
+                printf("entrada invalida, digite apenas numeros!\n");
+                continue;
+            }
+            escolha = atoi(entrada);
+            if(escolha < 1 || escolha > 3){
+                printf("escolha fora do intervalo de 1 a 3, tente novamente!\n");
+                continue;
+            }
+            break;
+        }
         if(escolha == 1){
             cadastra_usuario(cadastrados);
         }
