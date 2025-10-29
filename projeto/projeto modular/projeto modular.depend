@@ -11,7 +11,7 @@
 	"remove_nova_linha.h"
 	"listagem.h"
 
-1761760998 c:\users\labinfo4\desktop\projeto-itp\projeto\projeto modular\tipos.h
+1761766566 c:\users\labinfo4\desktop\projeto-itp\projeto\projeto modular\tipos.h
 
 1761760998 source:c:\users\labinfo4\desktop\projeto-itp\projeto\projeto modular\cadastra_usuario.c
 	<stdio.h>
@@ -37,7 +37,7 @@
 1761760998 c:\users\labinfo4\desktop\projeto-itp\projeto\projeto modular\cadastra_livro.h
 	"tipos.h"
 
-1761760998 source:c:\users\labinfo4\desktop\projeto-itp\projeto\projeto modular\pega_emprestado.c
+1761767363 source:c:\users\labinfo4\desktop\projeto-itp\projeto\projeto modular\pega_emprestado.c
 	<stdio.h>
 	<string.h>
 	"tipos.h"
@@ -47,12 +47,12 @@
 1761760998 c:\users\labinfo4\desktop\projeto-itp\projeto\projeto modular\pega_emprestado.h
 	"tipos.h"
 
-1761760998 source:c:\users\labinfo4\desktop\projeto-itp\projeto\projeto modular\insere_emprestados.c
+1761767401 source:c:\users\labinfo4\desktop\projeto-itp\projeto\projeto modular\insere_emprestados.c
 	<stdio.h>
 	<string.h>
 	"tipos.h"
 
-1761760998 c:\users\labinfo4\desktop\projeto-itp\projeto\projeto modular\insere_emprestados.h
+1761767294 c:\users\labinfo4\desktop\projeto-itp\projeto\projeto modular\insere_emprestados.h
 	"tipos.h"
 
 1761760998 source:c:\users\labinfo4\desktop\projeto-itp\projeto\projeto modular\devolucao.c

@@ -52,7 +52,7 @@ void pega_emprestado(Livro acervo[], Usuario cadastrados[], Emprestimos pegos[])
                 if(verifica_id == 0){
                     cadastrados[i].emprestimos++;
                     acervo[pos_livro].qnt--;
-                    insere_emprestados(pegos, livro, cpf, acervo);
+                    insere_emprestados(pegos, livro, cpf, acervo, cadastrados[i].nome);
                     printf("empréstimo realizado!\n");
                     return;
                 }
