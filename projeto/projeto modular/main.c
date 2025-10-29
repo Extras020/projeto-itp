@@ -50,21 +50,21 @@ int main(){
             }
             break;
         }
-    }
-    if(escolha == 1){
-        cadastra_usuario(cadastrados);
-    }
-    else if(escolha == 2){
-        cadastra_livro(acervo);
-    }
-    else if(escolha == 3){
-        pega_emprestado(acervo, cadastrados, pegos);
-    }
-    else if(escolha == 4){
-        devolucao(acervo, cadastrados);
-    }
-    else if(escolha == 5){
-        listagem(cadastrados, acervo, pegos);
+        if(escolha == 1){
+            cadastra_usuario(cadastrados);
+        }
+        else if(escolha == 2){
+            cadastra_livro(acervo);
+        }
+        else if(escolha == 3){
+            pega_emprestado(acervo, cadastrados, pegos);
+        }
+        else if(escolha == 4){
+            devolucao(acervo, cadastrados);
+        }
+        else if(escolha == 5){
+            listagem(cadastrados, acervo, pegos);
+        }
     }
     return 0;
 }
