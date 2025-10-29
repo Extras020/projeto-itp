@@ -9,6 +9,8 @@
 #include "remove_nova_linha.h"
 #include "listagem.h"
 
+void converte_minusculas(char string[]);
+
 int main(){
     char entrada[100];
     int escolha = 0, validacao, i;
@@ -67,10 +69,4 @@ int main(){
         }
     }
     return 0;
-}
-void busca(Usuario cadastrados[], Livro acervo[], Emprestimos pegos[]){
-    //Resolver problema das letras maiusculas e minusculas!!!!!!
-    printf("o que deseja buscar?");
-    printf("1 - Usuario\n");
-    printf("2 - Livro\n");
 }

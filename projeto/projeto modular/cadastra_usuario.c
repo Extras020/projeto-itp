@@ -2,6 +2,7 @@
 #include <string.h>
 #include "remove_nova_linha.h"
 #include "tipos.h"
+#include "converte_minusculas.h"
 
 void cadastra_usuario(Usuario cadastrados[]){
     char cpf[MAX];
@@ -15,6 +16,7 @@ void cadastra_usuario(Usuario cadastrados[]){
     printf("digite o nome do usuario:\n");
     fgets(cadastrados[pos].nome, MAX, stdin);
     remove_nova_linha(cadastrados[pos].nome);
+    converte_minusculas(cadastrados[pos].nome);
     printf("digite o CPF:\n");
     fgets(cpf, MAX, stdin);
     remove_nova_linha(cpf);

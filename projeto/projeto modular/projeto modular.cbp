@@ -39,6 +39,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="cadastra_usuario.h" />
+		<Unit filename="converte_minusculas.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="converte_minusculas.h" />
 		<Unit filename="devolucao.c">
 			<Option compilerVar="CC" />
 		</Unit>

@@ -2,6 +2,7 @@
 #include <string.h>
 #include "tipos.h"
 #include "remove_nova_linha.h"
+#include "converte_minusculas.h"
 
 void devolucao(Livro acervo[], Usuario cadastrados[]){
     char cpf[MAX];
@@ -36,6 +37,7 @@ void devolucao(Livro acervo[], Usuario cadastrados[]){
         printf("digite o nome do livro que deseja devolver.\n");
         fgets(livro, MAX, stdin);
         remove_nova_linha(livro);
+        converte_minusculas(livro);
         for(i = 0; i < 1000; i++){
             if(strcmp(acervo[i].nome, livro) == 0){
                 cont++;

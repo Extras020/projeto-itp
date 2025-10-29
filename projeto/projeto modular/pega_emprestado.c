@@ -3,6 +3,7 @@
 #include "tipos.h"
 #include "remove_nova_linha.h"
 #include "insere_emprestados.h"
+#include "converte_minusculas.h"
 
 void pega_emprestado(Livro acervo[], Usuario cadastrados[], Emprestimos pegos[]){
     char livro[MAX];
@@ -12,6 +13,7 @@ void pega_emprestado(Livro acervo[], Usuario cadastrados[], Emprestimos pegos[])
     printf("digite o nome do livro que deseja:\n");
     fgets(livro, MAX, stdin);
     remove_nova_linha(livro);
+    converte_minusculas(livro);
     for(i = 0; i < 1000; i++){
         if(strcmp(acervo[i].nome, livro) == 0){
             cont++;
