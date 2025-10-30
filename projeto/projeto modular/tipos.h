@@ -19,9 +19,8 @@ typedef struct{
 typedef struct{
     char isbn[MAX];
     char cpf[MAX];
-    char nome_livro[MAX];
     char nome_usuario[MAX];
-    char nome_autor[MAX];
+    char nome_livro[MAX];
 }Emprestimos;
 
 #endif // TIPOS_H

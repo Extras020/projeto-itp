@@ -12,7 +12,7 @@ void insere_emprestados(Emprestimos pegos[], char livro[], char cpf[], Livro ace
     }
     for(i = 0; i < 1000; i++){
         if(strcmp(livro, acervo[i].nome) == 0){
-            strcpy(pegos[pos].nome_autor, livro);
+            strcpy(pegos[pos].nome_livro, livro);
             strcpy(pegos[pos].nome_usuario, nome);
             strcpy(pegos[pos].isbn, acervo[i].isbn);
             strcpy(pegos[pos].cpf, cpf);

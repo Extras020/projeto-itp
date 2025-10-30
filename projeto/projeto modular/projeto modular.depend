@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1761862902 source:c:\users\labinfo4\desktop\projeto-itp\projeto\projeto modular\main.c
+1761866010 source:c:\users\labinfo4\desktop\projeto-itp\projeto\projeto modular\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -10,8 +10,10 @@
 	"devolucao.h"
 	"remove_nova_linha.h"
 	"listagem.h"
+	"converte_minusculas.h"
+	"busca.h"
 
-1761863126 c:\users\labinfo4\desktop\projeto-itp\projeto\projeto modular\tipos.h
+1761863632 c:\users\labinfo4\desktop\projeto-itp\projeto\projeto modular\tipos.h
 
 1761857481 source:c:\users\labinfo4\desktop\projeto-itp\projeto\projeto modular\cadastra_usuario.c
 	<stdio.h>
@@ -50,7 +52,7 @@
 1761857481 c:\users\labinfo4\desktop\projeto-itp\projeto\projeto modular\pega_emprestado.h
 	"tipos.h"
 
-1761857481 source:c:\users\labinfo4\desktop\projeto-itp\projeto\projeto modular\insere_emprestados.c
+1761863644 source:c:\users\labinfo4\desktop\projeto-itp\projeto\projeto modular\insere_emprestados.c
 	<stdio.h>
 	<string.h>
 	"tipos.h"
@@ -90,4 +92,15 @@
 	<string.h>
 
 1761857481 c:\users\labinfo4\desktop\projeto-itp\projeto\projeto modular\converte_minusculas.h
+
+1761865924 source:c:\users\labinfo4\desktop\projeto-itp\projeto\projeto modular\busca.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"tipos.h"
+	"remove_nova_linha.h"
+	"converte_minusculas.h"
+
+1761865778 c:\users\labinfo4\desktop\projeto-itp\projeto\projeto modular\busca.h
+	"tipos.h"
 
