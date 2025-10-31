@@ -4,23 +4,28 @@
 #include "remove_nova_linha.h"
 #include "converte_minusculas.h"
 
-void devolucao(Livro acervo[], Usuario cadastrados[]){
+void devolucao(Livro acervo[], Usuario cadastrados[], Emprestimos pegos[]){
     char cpf[MAX];
     char livro[MAX];
-    int i, cont = 0, confirma_id, pos_id;
+    int i, cont = 0, confirma_id, pos_id, pos_livro;
     printf("digite o cpf do usuario:\n");
     fgets(cpf, MAX, stdin);
     remove_nova_linha(cpf);
     for(i = 0; i < 1000; i++){
-        if(strcmp(cadastrados[i].cpf, cpf) == 0){
+        if(strcmp(pegos[i].cpf, cpf) == 0){
             cont++;
-            pos_id = i;
             printf("confirme o nome(digite 0 para sim ou 1 para não).\n");
             printf("%s\n", cadastrados[i].nome);
             scanf("%d", &confirma_id);
             getchar();
             if(confirma_id == 0){
                 break;
+                for(i = 0; i < 1000; i++){
+                    if(strcmp(cadastrados[i].cpf, cpf) == 0){
+                        pos_id = i;
+                        break;
+                    }
+                }
             }
             else if(confirma_id == 1){
                 printf("verifique seus dados!");
@@ -29,7 +34,7 @@ void devolucao(Livro acervo[], Usuario cadastrados[]){
         }
     }
     if(cont == 0){
-        printf("usuario não encontrado.\n");
+        printf("Não há nenhum emprestimos realizado para este usuario.\n");
         return;
     }
     cont = 0;
@@ -40,14 +45,21 @@ void devolucao(Livro acervo[], Usuario cadastrados[]){
         converte_minusculas(livro);
         for(i = 0; i < 1000; i++){
             if(strcmp(acervo[i].nome, livro) == 0){
+                pos_livro = i;
+                break;
+            }
+        }
+        for(i = 0; i < 1000; i++){
+            if(strcmp(pegos[i].nome_livro, livro) == 0){
                 cont++;
                 printf("devolução realizada!\n");
-                acervo[i].qnt++;
+                acervo[pos_livro].qnt++;
                 cadastrados[pos_id].emprestimos--;
+                pegos[i].nome_livro[0] = '\0';
             }
         }
         if(cont == 0){
-            printf("livro não encontrado no acervo!");
+            printf("este livro não consta como emprestimo desse usuario\n");
             return;
         }
     }

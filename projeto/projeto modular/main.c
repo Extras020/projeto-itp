@@ -64,7 +64,7 @@ int main(){
             pega_emprestado(acervo, cadastrados, pegos);
         }
         else if(escolha == 4){
-            devolucao(acervo, cadastrados);
+            devolucao(acervo, cadastrados, pegos);
         }
         else if(escolha == 5){
             listagem(cadastrados, acervo, pegos);
