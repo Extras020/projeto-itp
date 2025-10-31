@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1761938042 source:c:\users\labinfo4\desktop\projeto-itp\projeto\projeto modular\main.c
+1761945823 source:c:\users\labinfo4\desktop\projeto-itp\projeto\projeto modular\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -13,35 +13,35 @@
 	"converte_minusculas.h"
 	"busca.h"
 
-1761937731 c:\users\labinfo4\desktop\projeto-itp\projeto\projeto modular\tipos.h
+1761945823 c:\users\labinfo4\desktop\projeto-itp\projeto\projeto modular\tipos.h
 
-1761937731 source:c:\users\labinfo4\desktop\projeto-itp\projeto\projeto modular\cadastra_usuario.c
+1761945823 source:c:\users\labinfo4\desktop\projeto-itp\projeto\projeto modular\cadastra_usuario.c
 	<stdio.h>
 	<string.h>
 	"remove_nova_linha.h"
 	"tipos.h"
 	"converte_minusculas.h"
 
-1761937731 c:\users\labinfo4\desktop\projeto-itp\projeto\projeto modular\remove_nova_linha.h
+1761945823 c:\users\labinfo4\desktop\projeto-itp\projeto\projeto modular\remove_nova_linha.h
 
-1761937731 source:c:\users\labinfo4\desktop\projeto-itp\projeto\projeto modular\remove_nova_linha.c
+1761945823 source:c:\users\labinfo4\desktop\projeto-itp\projeto\projeto modular\remove_nova_linha.c
 	<stdio.h>
 	<string.h>
 
-1761937731 c:\users\labinfo4\desktop\projeto-itp\projeto\projeto modular\cadastra_usuario.h
+1761945823 c:\users\labinfo4\desktop\projeto-itp\projeto\projeto modular\cadastra_usuario.h
 	"tipos.h"
 
-1761937731 source:c:\users\labinfo4\desktop\projeto-itp\projeto\projeto modular\cadastra_livro.c
+1761945823 source:c:\users\labinfo4\desktop\projeto-itp\projeto\projeto modular\cadastra_livro.c
 	<stdio.h>
 	<string.h>
 	"tipos.h"
 	"remove_nova_linha.h"
 	"converte_minusculas.h"
 
-1761937731 c:\users\labinfo4\desktop\projeto-itp\projeto\projeto modular\cadastra_livro.h
+1761945823 c:\users\labinfo4\desktop\projeto-itp\projeto\projeto modular\cadastra_livro.h
 	"tipos.h"
 
-1761937731 source:c:\users\labinfo4\desktop\projeto-itp\projeto\projeto modular\pega_emprestado.c
+1761945823 source:c:\users\labinfo4\desktop\projeto-itp\projeto\projeto modular\pega_emprestado.c
 	<stdio.h>
 	<string.h>
 	"tipos.h"
@@ -49,34 +49,34 @@
 	"insere_emprestados.h"
 	"converte_minusculas.h"
 
-1761937731 c:\users\labinfo4\desktop\projeto-itp\projeto\projeto modular\pega_emprestado.h
+1761945823 c:\users\labinfo4\desktop\projeto-itp\projeto\projeto modular\pega_emprestado.h
 	"tipos.h"
 
-1761937731 source:c:\users\labinfo4\desktop\projeto-itp\projeto\projeto modular\insere_emprestados.c
+1761945823 source:c:\users\labinfo4\desktop\projeto-itp\projeto\projeto modular\insere_emprestados.c
 	<stdio.h>
 	<string.h>
 	"tipos.h"
 
-1761937731 c:\users\labinfo4\desktop\projeto-itp\projeto\projeto modular\insere_emprestados.h
+1761945823 c:\users\labinfo4\desktop\projeto-itp\projeto\projeto modular\insere_emprestados.h
 	"tipos.h"
 
-1761939205 source:c:\users\labinfo4\desktop\projeto-itp\projeto\projeto modular\devolucao.c
+1761946368 source:c:\users\labinfo4\desktop\projeto-itp\projeto\projeto modular\devolucao.c
 	<stdio.h>
 	<string.h>
 	"tipos.h"
 	"remove_nova_linha.h"
 	"converte_minusculas.h"
 
-1761938042 c:\users\labinfo4\desktop\projeto-itp\projeto\projeto modular\devolucao.h
+1761945823 c:\users\labinfo4\desktop\projeto-itp\projeto\projeto modular\devolucao.h
 	"string.h"
 
-1761937731 source:c:\users\labinfo4\desktop\projeto-itp\projeto\projeto modular\listagem.c
+1761945823 source:c:\users\labinfo4\desktop\projeto-itp\projeto\projeto modular\listagem.c
 	<stdio.h>
 	<string.h>
 	<stdlib.h>
 	"tipos.h"
 
-1761937731 c:\users\labinfo4\desktop\projeto-itp\projeto\projeto modular\listagem.h
+1761945823 c:\users\labinfo4\desktop\projeto-itp\projeto\projeto modular\listagem.h
 	"tipos.h"
 
 1761763353 source:c:\users\labinfo4\desktop\projeto-itp\projeto\projeto modular\validacao_entrada.c
@@ -87,13 +87,13 @@
 
 1761763238 c:\users\labinfo4\desktop\projeto-itp\projeto\projeto modular\validacao_entrada.h
 
-1761937731 source:c:\users\labinfo4\desktop\projeto-itp\projeto\projeto modular\converte_minusculas.c
+1761945823 source:c:\users\labinfo4\desktop\projeto-itp\projeto\projeto modular\converte_minusculas.c
 	<stdio.h>
 	<string.h>
 
-1761937731 c:\users\labinfo4\desktop\projeto-itp\projeto\projeto modular\converte_minusculas.h
+1761945823 c:\users\labinfo4\desktop\projeto-itp\projeto\projeto modular\converte_minusculas.h
 
-1761937731 source:c:\users\labinfo4\desktop\projeto-itp\projeto\projeto modular\busca.c
+1761945823 source:c:\users\labinfo4\desktop\projeto-itp\projeto\projeto modular\busca.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -101,6 +101,6 @@
 	"remove_nova_linha.h"
 	"converte_minusculas.h"
 
-1761937731 c:\users\labinfo4\desktop\projeto-itp\projeto\projeto modular\busca.h
+1761945823 c:\users\labinfo4\desktop\projeto-itp\projeto\projeto modular\busca.h
 	"tipos.h"
 

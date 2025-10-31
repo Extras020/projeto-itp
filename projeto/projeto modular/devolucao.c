@@ -19,13 +19,13 @@ void devolucao(Livro acervo[], Usuario cadastrados[], Emprestimos pegos[]){
             scanf("%d", &confirma_id);
             getchar();
             if(confirma_id == 0){
-                break;
                 for(i = 0; i < 1000; i++){
                     if(strcmp(cadastrados[i].cpf, cpf) == 0){
                         pos_id = i;
                         break;
                     }
                 }
+                break;
             }
             else if(confirma_id == 1){
                 printf("verifique seus dados!");
@@ -50,12 +50,12 @@ void devolucao(Livro acervo[], Usuario cadastrados[], Emprestimos pegos[]){
             }
         }
         for(i = 0; i < 1000; i++){
-            if(strcmp(pegos[i].nome_livro, livro) == 0){
+            if(strcmp(pegos[i].nome_livro, livro) == 0 && strcmp(pegos[i].cpf, cpf) == 0){
                 cont++;
                 printf("devolução realizada!\n");
                 acervo[pos_livro].qnt++;
                 cadastrados[pos_id].emprestimos--;
-                pegos[i].nome_livro[0] = '\0';
+                // lembrar de modificar o vetor pegos[] ao realizar a devolução
             }
         }
         if(cont == 0){
