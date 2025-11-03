@@ -55,7 +55,10 @@ void devolucao(Livro acervo[], Usuario cadastrados[], Emprestimos pegos[]){
                 printf("devolução realizada!\n");
                 acervo[pos_livro].qnt++;
                 cadastrados[pos_id].emprestimos--;
-                // lembrar de modificar o vetor pegos[] ao realizar a devolução
+                pegos[i].cpf[0] = '\0';
+                pegos[i].isbn[0] = '\0';
+                pegos[i].nome_livro[0] = '\0';
+                pegos[i].nome_usuario[0] = '\0';
             }
         }
         if(cont == 0){
