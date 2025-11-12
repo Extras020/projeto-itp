@@ -7,7 +7,8 @@
 void devolucao(Livro acervo[], Usuario cadastrados[], Emprestimos pegos[]){
     char cpf[MAX];
     char livro[MAX];
-    int i, cont = 0, confirma_id, pos_id, pos_livro;
+    char entrada[MAX];
+    int i, cont = 0, confirma_id, pos_id, pos_livro, validacao;
     printf("digite o cpf do usuario:\n");
     fgets(cpf, MAX, stdin);
     remove_nova_linha(cpf);
@@ -16,8 +17,33 @@ void devolucao(Livro acervo[], Usuario cadastrados[], Emprestimos pegos[]){
             cont++;
             printf("confirme o nome(digite 0 para sim ou 1 para não).\n");
             printf("%s\n", cadastrados[i].nome);
-            scanf("%d", &confirma_id);
-            getchar();
+            while(1){
+                fgets(entrada, 100, stdin);
+                remove_nova_linha(entrada);
+                if(strlen(entrada) == 0){
+                    printf("nenhuma entrada detectada, tente novamente!\n");
+                    continue;
+                }
+                validacao = 1;
+                i = 0;
+                while(entrada[i] != '\0'){
+                    if(entrada[i] < '0' || entrada[i] > '9'){
+                        validacao = 0;
+                        break;
+                    }
+                    i++;
+                }
+                if(validacao == 0){
+                    printf("entrada invalida, digite apenas numeros!\n");
+                    continue;
+                }
+                confirma_id = atoi(entrada);
+                if(confirma_id < 0 || confirma_id > 1){
+                    printf("escolha fora do intervalo de 0 a 1, tente novamente!\n");
+                    continue;
+                }
+                break;
+            }
             if(confirma_id == 0){
                 for(i = 0; i < 1000; i++){
                     if(strcmp(cadastrados[i].cpf, cpf) == 0){

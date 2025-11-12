@@ -2,6 +2,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include "tipos.h"
+#include "remove_nova_linha.h"
 
 void listagem(Usuario cadastrados[], Livro acervo[], Emprestimos pegos[]){
     char entrada[100];
@@ -63,7 +64,7 @@ void listagem(Usuario cadastrados[], Livro acervo[], Emprestimos pegos[]){
                 break;
             }
             else{
-                printf("%s - %s\n", pegos[i].isbn, pegos[i].cpf);
+                printf("%s - %s\n", pegos[i].nome_livro, pegos[i].nome_usuario);
             }
         }
     }

@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 #include "tipos.h"
 #include "remove_nova_linha.h"
 #include "converte_minusculas.h"
