@@ -1,8 +1,10 @@
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 #include "tipos.h"
 #include "remove_nova_linha.h"
 #include "converte_minusculas.h"
+#include "apaga_registro.h"
 
 void devolucao(Livro acervo[], Usuario cadastrados[], Emprestimos pegos[]){
     char cpf[MAX];
@@ -81,10 +83,10 @@ void devolucao(Livro acervo[], Usuario cadastrados[], Emprestimos pegos[]){
                 printf("devolução realizada!\n");
                 acervo[pos_livro].qnt++;
                 cadastrados[pos_id].emprestimos--;
-                pegos[i].cpf[0] = '\0';
-                pegos[i].isbn[0] = '\0';
-                pegos[i].nome_livro[0] = '\0';
-                pegos[i].nome_usuario[0] = '\0';
+                apaga_registro(pegos[i].cpf);
+                apaga_registro(pegos[i].isbn);
+                apaga_registro(pegos[i].nome_livro);
+                apaga_registro(pegos[i].nome_usuario);
             }
         }
         if(cont == 0){

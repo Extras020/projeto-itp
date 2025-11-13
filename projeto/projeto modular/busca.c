@@ -87,7 +87,7 @@ void busca(Emprestimos pegos[], Livro acervo[], Usuario cadastrados[]){
                 cont = 1;
                 printf("Nome do usuário - %s\n", pegos[i].nome_usuario);
                 printf("CPF do usuário - %s\n", pegos[i].cpf);
-                printf("Empretimos realizados:\n");
+                printf("Emprestimos realizados:\n");
                 for(a = 0; a < 1000; a++){
                     if(strcmp(pegos[a].nome_usuario, busca) == 0 || strcmp(pegos[a].cpf, busca) == 0){
                         printf("%s - %s\n", pegos[a].nome_livro, pegos[a].isbn);

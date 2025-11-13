@@ -35,6 +35,10 @@
 			<Option compilerVar="CC" />
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
+		<Unit filename="apaga_registro.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="apaga_registro.h" />
 		<Unit filename="busca.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -75,10 +79,6 @@
 		</Unit>
 		<Unit filename="remove_nova_linha.h" />
 		<Unit filename="tipos.h" />
-		<Unit filename="validacao_entrada.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="validacao_entrada.h" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>

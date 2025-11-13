@@ -11,6 +11,7 @@
 #include "converte_minusculas.h"
 #include "busca.h"
 
+void reordena_vetor(Emprestimos pegos[]);
 
 int main(){
     char entrada[100];
@@ -74,4 +75,20 @@ int main(){
         }
     }
     return 0;
+}
+void reordena_vetor(Emprestimos pegos[]){
+    //LEMBRE DE TERMINAR ISSO
+    int i, u;
+    Emprestimos AUX;
+    for(i = 0; i < 1000; i++){
+        if(pegos[i].cpf[0] == '\0'){
+            for(u = i + 1; u < 1000; u++){
+                if(pegos[u].cpf[0] != '\0'){
+                    break;
+                }
+            }
+            AUX = pegos[u];
+        }
+    }
+
 }
