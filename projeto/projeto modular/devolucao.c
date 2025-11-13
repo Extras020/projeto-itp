@@ -11,6 +11,8 @@ void devolucao(Livro acervo[], Usuario cadastrados[], Emprestimos pegos[]){
     char livro[MAX];
     char entrada[MAX];
     int i, cont = 0, confirma_id, pos_id, pos_livro, validacao;
+    int l, u, v, p;
+    Emprestimos AUX;
     printf("digite o cpf do usuario:\n");
     fgets(cpf, MAX, stdin);
     remove_nova_linha(cpf);
@@ -27,13 +29,13 @@ void devolucao(Livro acervo[], Usuario cadastrados[], Emprestimos pegos[]){
                     continue;
                 }
                 validacao = 1;
-                i = 0;
-                while(entrada[i] != '\0'){
-                    if(entrada[i] < '0' || entrada[i] > '9'){
+                v = 0;
+                while(entrada[v] != '\0'){
+                    if(entrada[v] < '0' || entrada[v] > '9'){
                         validacao = 0;
                         break;
                     }
-                    i++;
+                    v++;
                 }
                 if(validacao == 0){
                     printf("entrada invalida, digite apenas numeros!\n");
@@ -47,9 +49,9 @@ void devolucao(Livro acervo[], Usuario cadastrados[], Emprestimos pegos[]){
                 break;
             }
             if(confirma_id == 0){
-                for(i = 0; i < 1000; i++){
-                    if(strcmp(cadastrados[i].cpf, cpf) == 0){
-                        pos_id = i;
+                for(p = 0; p < 1000; p++){
+                    if(strcmp(cadastrados[p].cpf, cpf) == 0){
+                        pos_id = p;
                         break;
                     }
                 }
@@ -87,6 +89,20 @@ void devolucao(Livro acervo[], Usuario cadastrados[], Emprestimos pegos[]){
                 apaga_registro(pegos[i].isbn);
                 apaga_registro(pegos[i].nome_livro);
                 apaga_registro(pegos[i].nome_usuario);
+                // reordena vetor para separar posições vazias de posições não-vazias
+                for(l = 0; l < 1000; l++){
+                    if(pegos[l].cpf[0] == '\0'){
+                        for(u = l + 1; u < 1000; u++){
+                            if(pegos[u].cpf[0] != '\0' && pegos[u+1].cpf[0] == '\0'){
+                                AUX = pegos[u];
+                                break;
+                            }
+                        }
+                        pegos[u] = pegos[l];
+                        pegos[l] = AUX;
+                        break;
+                    }
+                }
             }
         }
         if(cont == 0){

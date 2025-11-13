@@ -11,7 +11,7 @@ void pega_emprestado(Livro acervo[], Usuario cadastrados[], Emprestimos pegos[])
     char cpf[MAX];
     char entrada[MAX];
     int escolha, cont = 0;
-    int i, verifica_id, pos_livro, validacao;
+    int i, v, verifica_id, pos_livro, validacao;
     printf("digite o nome do livro que deseja:\n");
     fgets(livro, MAX, stdin);
     remove_nova_linha(livro);
@@ -84,13 +84,13 @@ void pega_emprestado(Livro acervo[], Usuario cadastrados[], Emprestimos pegos[])
                         continue;
                     }
                     validacao = 1;
-                    i = 0;
-                    while(entrada[i] != '\0'){
-                        if(entrada[i] < '0' || entrada[i] > '9'){
+                    v = 0;
+                    while(entrada[v] != '\0'){
+                        if(entrada[v] < '0' || entrada[v] > '9'){
                             validacao = 0;
                             break;
                         }
-                        i++;
+                        v++;
                     }
                     if(validacao == 0){
                         printf("entrada invalida, digite apenas numeros!\n");
