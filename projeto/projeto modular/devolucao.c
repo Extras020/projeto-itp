@@ -20,7 +20,7 @@ void devolucao(Livro acervo[], Usuario cadastrados[], Emprestimos pegos[]){
         if(strcmp(pegos[i].cpf, cpf) == 0){
             cont++;
             printf("confirme o nome(digite 0 para sim ou 1 para não).\n");
-            printf("%s\n", cadastrados[i].nome);
+            printf("%s\n", pegos[i].nome_usuario);
             while(1){
                 fgets(entrada, 100, stdin);
                 remove_nova_linha(entrada);
