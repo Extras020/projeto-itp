@@ -38,7 +38,7 @@ void devolucao(Livro acervo[], Usuario cadastrados[], Emprestimos pegos[]){
                     v++;
                 }
                 if(validacao == 0){
-                    printf("entrada invalida, digite apenas numeros!\n");
+                    printf("entrada inválida, digite apenas numeros!\n");
                     continue;
                 }
                 confirma_id = atoi(entrada);
@@ -64,7 +64,7 @@ void devolucao(Livro acervo[], Usuario cadastrados[], Emprestimos pegos[]){
         }
     }
     if(cont == 0){
-        printf("Não há nenhum emprestimos realizado para este usuario.\n");
+        printf("Não há nenhum empréstimo realizado para este usuário.\n");
         return;
     }
     cont = 0;
@@ -106,7 +106,7 @@ void devolucao(Livro acervo[], Usuario cadastrados[], Emprestimos pegos[]){
             }
         }
         if(cont == 0){
-            printf("este livro não consta como emprestimo desse usuario\n");
+            printf("este livro não consta como empréstimo desse usuário\n");
             return;
         }
     }

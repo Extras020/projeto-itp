@@ -18,12 +18,12 @@ void cadastra_usuario(Usuario cadastrados[]){
     remove_nova_linha(cpf);
     for(i = 0; i < 1000; i++){
         if(strcmp(cpf, cadastrados[i].cpf) == 0){
-            printf("CPF ja cadastrado.\n");
+            printf("CPF já cadastrado.\n");
             return;
         }
     }
     strcpy(cadastrados[pos].cpf, cpf);
-    printf("digite o nome do usuario:\n");
+    printf("digite o nome do usuário:\n");
     fgets(cadastrados[pos].nome, MAX, stdin);
     remove_nova_linha(cadastrados[pos].nome);
     converte_minusculas(cadastrados[pos].nome);

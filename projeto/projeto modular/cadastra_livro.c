@@ -19,7 +19,7 @@ void cadastra_livro(Livro acervo[]){
     remove_nova_linha(isbn);
     for(i = 0; i < 1000; i++){
         if(strcmp(acervo[i].isbn, isbn) == 0){
-            printf("livro ja cadastrado.\n");
+            printf("livro já cadastrado.\n");
             return;
         }
     }

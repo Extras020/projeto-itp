@@ -20,11 +20,11 @@ int main(){
     Emprestimos pegos[1000] = {0};
     while(1){
         printf("Sistema de gerenciamento:\n");
-        printf("digite uma das opcoes(de 1 a 6):\n");
-        printf("1 - cadastra usuario\n");
+        printf("digite uma das opções(de 1 a 6):\n");
+        printf("1 - cadastra usuário\n");
         printf("2 - cadastra livro\n");
-        printf("3 - emprestimo\n");
-        printf("4 - devolucao\n");
+        printf("3 - empréstimo\n");
+        printf("4 - devolução\n");
         printf("5 - listagem\n");
         printf("6 - busca\n");
         while(1){
@@ -44,7 +44,7 @@ int main(){
                 i++;
             }
             if(validacao == 0){
-                printf("entrada invalida, digite apenas numeros!\n");
+                printf("entrada inválida, digite apenas números!\n");
                 continue;
             }
             escolha = atoi(entrada);

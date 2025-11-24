@@ -53,7 +53,7 @@ void pega_emprestado(Livro acervo[], Usuario cadastrados[], Emprestimos pegos[])
             i++;
         }
         if(validacao == 0){
-            printf("entrada invalida, digite apenas numeros!\n");
+            printf("entrada inválida, digite apenas numeros!\n");
             continue;
         }
         escolha = atoi(entrada);
@@ -93,7 +93,7 @@ void pega_emprestado(Livro acervo[], Usuario cadastrados[], Emprestimos pegos[])
                         v++;
                     }
                     if(validacao == 0){
-                        printf("entrada invalida, digite apenas numeros!\n");
+                        printf("entrada inválida, digite apenas numeros!\n");
                         continue;
                     }
                     verifica_id = atoi(entrada);

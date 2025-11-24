@@ -9,10 +9,10 @@ void busca(Emprestimos pegos[], Livro acervo[], Usuario cadastrados[]){
     char entrada[100];
     char busca[100];
     int i, a, escolha, validacao = 0, cont = 0;
-    printf("qual busca você procura?\n");
-    printf("1 - Usuario\n");
+    printf("Qual busca você procura?\n");
+    printf("1 - Usuário\n");
     printf("2 - Livro\n");
-    printf("3 - Emprestimos\n");
+    printf("3 - Empréstimos\n");
     while(1){
         fgets(entrada, 100, stdin);
         remove_nova_linha(entrada);
@@ -30,7 +30,7 @@ void busca(Emprestimos pegos[], Livro acervo[], Usuario cadastrados[]){
             i++;
         }
         if(validacao == 0){
-            printf("entrada invalida, digite apenas numeros!\n");
+            printf("entrada inválida, digite apenas numeros!\n");
             continue;
         }
         escolha = atoi(entrada);
@@ -50,7 +50,7 @@ void busca(Emprestimos pegos[], Livro acervo[], Usuario cadastrados[]){
                 cont = 1;
                 printf("Nome - %s\n", cadastrados[i].nome);
                 printf("CPF - %s\n", cadastrados[i].cpf);
-                printf("Emprestimos - %d\n", cadastrados[i].emprestimos);
+                printf("Empréstimos - %d\n", cadastrados[i].emprestimos);
             }
         }
         if(cont == 0){
@@ -87,7 +87,7 @@ void busca(Emprestimos pegos[], Livro acervo[], Usuario cadastrados[]){
                 cont = 1;
                 printf("Nome do usuário - %s\n", pegos[i].nome_usuario);
                 printf("CPF do usuário - %s\n", pegos[i].cpf);
-                printf("Emprestimos realizados:\n");
+                printf("Empréstimos realizados:\n");
                 for(a = 0; a < 1000; a++){
                     if(strcmp(pegos[a].nome_usuario, busca) == 0 || strcmp(pegos[a].cpf, busca) == 0){
                         printf("%s - %s\n", pegos[a].nome_livro, pegos[a].isbn);
@@ -97,7 +97,7 @@ void busca(Emprestimos pegos[], Livro acervo[], Usuario cadastrados[]){
             }
         }
         if(cont == 0){
-            printf("Nenhum emprestimo encontrado para esse usuario\n");
+            printf("Nenhum empréstimo encontrado para esse usuário\n");
             return;
         }
     }

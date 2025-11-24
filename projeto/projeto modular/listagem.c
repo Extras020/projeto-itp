@@ -8,9 +8,9 @@ void listagem(Usuario cadastrados[], Livro acervo[], Emprestimos pegos[]){
     char entrada[100];
     int i, escolha = 0, validacao;
     printf("digite qual lista voce quer\n");
-    printf("1 - Usuarios cadastrados\n");
+    printf("1 - Usuários cadastrados\n");
     printf("2 - Livros do acervo\n");
-    printf("3 - Emprestimos realizados\n");
+    printf("3 - Empréstimos realizados\n");
     while(1){
         fgets(entrada, 100, stdin);
         remove_nova_linha(entrada);
@@ -28,7 +28,7 @@ void listagem(Usuario cadastrados[], Livro acervo[], Emprestimos pegos[]){
             i++;
         }
         if(validacao == 0){
-            printf("entrada invalida, digite apenas numeros!\n");
+            printf("entrada inválida, digite apenas numeros!\n");
             continue;
         }
         escolha = atoi(entrada);
