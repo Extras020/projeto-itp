@@ -7,7 +7,7 @@ Este repositório contém o projeto individual e as listas de exercícios da dis
 ## 📂 Conteúdo
 
 - Código-fonte do projeto
-- Relatório técnico (PDF)
+- Relatório técnico U1 e U2 (PDF)
 - Listas de exercícios (Semanas 2 a 6)
 ---
 
